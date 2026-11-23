@@ -1,320 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME ZONE</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #080d25 url("fundo-gamer.svg") center center / cover fixed;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 30px 15px;
-            margin: 0;
-        }
-
-        h1 {
-            color: #38bdf8;
-            font-size: clamp(2rem, 6vw, 45px);
-            text-shadow: 0 0 14px #0284c7;
-        }
-
-        nav {
-            background: rgba(10, 18, 45, 0.92);
-            border: 1px solid #38bdf8;
-            box-shadow: 0 0 14px #0284c7;
-            padding: 18px;
-            border-radius: 12px;
-            margin: 20px auto;
-            max-width: 850px;
-        }
-
-        nav a {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 8px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            color: white;
-            text-shadow: 0 0 10px #38bdf8;
-        }
-
-        .card {
-            background: rgba(12, 20, 48, 0.94);
-            border: 1px solid rgba(56, 189, 248, 0.55);
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 450px;
-            border-radius: 15px;
-            scroll-margin-top: 20px;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 30px #00ffff;
-            border: 2px solid #00ffff;
-        }
-
-        img {
-            border-radius: 12px;
-            max-width: 100%;
-        }
-
-        button {
-            background: #e11d48;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            margin: 5px;
-        }
-
-        button:hover {
-            background: #be123c;
-        }
-
-        input {
-            padding: 12px;
-            border-radius: 8px;
-            border: none;
-            width: 220px;
-            max-width: 80%;
-        }
-
-        #listaFavoritos {
-            list-style: none;
-            padding: 0;
-        }
-
-        #listaFavoritos li {
-            background: rgba(4, 10, 30, 0.95);
-            border: 1px solid rgba(56, 189, 248, 0.45);
-            padding: 12px;
-            margin: 8px;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 520px) {
-            body {
-                padding: 20px 10px;
-                background-attachment: scroll;
-            }
-
-            nav {
-                padding: 12px 6px;
-            }
-
-            nav a {
-                margin: 6px;
-            }
-
-            .card {
-                padding: 16px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="GAME ZONE: descubra jogos, encontre seus favoritos e visite plataformas oficiais.">
+<title>GAME ZONE 2.0 | Black & Gold</title>
+<style>
+:root{--bg:#09090b;--panel:#151519;--panel2:#1e1c18;--gold:#f5c451;--gold2:#ffdf88;--text:#f7f5ee;--muted:#b8b5ab;--line:#6e5526}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#29200e 0%,#0d0c0c 48%,var(--bg) 100%);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}header{border-bottom:1px solid #3a3020;background:#0c0b0bec;position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}.topbar{max-width:1160px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 22px}.brand{font-weight:900;letter-spacing:1px;font-size:1.3rem;text-decoration:none;color:var(--gold)}nav{display:flex;flex-wrap:wrap;gap:8px}nav a{text-decoration:none;padding:8px 11px;border-radius:8px;color:#e8e4d8;font-size:.92rem}nav a:hover{background:#332914;color:var(--gold2)}main{max-width:1160px;margin:auto;padding:0 22px 60px}.hero{text-align:center;padding:78px 12px 60px}.eyebrow{display:inline-block;border:1px solid var(--line);color:var(--gold2);border-radius:99px;padding:5px 15px;font-size:.85rem;letter-spacing:2px}.hero h1{font-size:clamp(2.7rem,8vw,5.6rem);line-height:1.1;margin:20px 0 15px;color:var(--gold);text-shadow:0 0 30px #e8ae3540;letter-spacing:2px}.hero p{color:var(--muted);font-size:1.1rem;max-width:650px;margin:0 auto 25px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:1px solid #b68b32;background:linear-gradient(135deg,#f9d777,#c9942d);color:#19140a;font-weight:800;padding:11px 18px;border-radius:11px;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px);box-shadow:0 8px 22px #f5c45133}.btn.secondary{background:#211d15;color:var(--gold2);border-color:var(--line)}.btn.secondary:hover{background:#302717}.search{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 40px}.search input{min-width:min(100%,330px);padding:13px 16px;border-radius:10px;border:1px solid #6c552d;background:#151515;color:#fff}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:36px 0 18px}.section-heading h2{margin:0;font-size:1.75rem;color:var(--gold)}.section-heading p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:20px}.card{background:linear-gradient(155deg,#201d17,#111115 75%);border:1px solid #4a3b23;border-radius:18px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;scroll-margin-top:100px}.card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 12px 30px #0009,0 0 18px #f5c45119}.card img,.placeholder{width:100%;height:170px;object-fit:cover;display:block;background:#242016}.placeholder{display:grid;place-items:center;font-size:4rem}.card-body{padding:19px}.card h3{margin:0 0 8px;font-size:1.35rem}.card p{color:var(--muted);margin:0 0 17px;min-height:48px}.actions{display:flex;flex-wrap:wrap;gap:9px}.actions .btn{flex:1;font-size:.9rem;padding:10px 12px}.favorite.active{background:#3b2e12;color:var(--gold2)}.favorites{background:linear-gradient(130deg,#1f1a11,#111114);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:44px;scroll-margin-top:100px}.favorites h2{color:var(--gold);margin:0}.favorites p{color:var(--muted)}#listaFavoritos{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0}#listaFavoritos li{background:#302716;border:1px solid var(--line);padding:8px 13px;border-radius:30px}#listaFavoritos li.empty{background:transparent;border:0;padding:0;color:var(--muted)}.notice{color:var(--gold2);text-align:center;min-height:25px;margin-top:10px}footer{text-align:center;border-top:1px solid #3a3020;color:var(--muted);padding:24px}footer strong{color:var(--gold)}@media(max-width:700px){.topbar{flex-direction:column;align-items:center}nav{justify-content:center}.hero{padding:55px 8px 35px}.section-heading{display:block}.grid{grid-template-columns:1fr}.card p{min-height:0}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
 </head>
-
 <body>
-
-    <h1 id="inicio">🎮 GAME ZONE</h1>
-
-    <nav>
-        <a href="#inicio">Início</a>
-        <a href="#roblox">Roblox</a>
-        <a href="#minecraft">Minecraft</a>
-        <a href="#freefire">Free Fire</a>
-        <a href="#friv">Friv</a>
-        <a href="#poki">Poki</a>
-        <a href="#favoritos">Favoritos ⭐</a>
-    </nav>
-
-    <div style="margin: 25px;">
-        <input
-            type="text"
-            id="pesquisa"
-            placeholder="Digite o nome de um jogo..."
-        >
-        <button onclick="pesquisarJogo()">Pesquisar 🔎</button>
-    </div>
-
-    <p>O universo dos games!</p>
-
-    <div class="card">
-        <h2>🔥 Bem-vindo!</h2>
-        <p>Descubra novidades, jogos e dicas.</p>
-    </div>
-
-    <div class="card" id="roblox">
-        <h2>🎮 Roblox</h2>
-        <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600"
-             alt="Imagem de videogame" width="250">
-        <p>Explore mundos incríveis e divirta-se!</p>
-        <button onclick="favoritar('Roblox')">⭐ Favoritar</button>
-        <p>
-            <a href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">
-                <button>Visitar Roblox</button>
-            </a>
-        </p>
-    </div>
-
-    <div class="card" id="minecraft">
-        <h2>⛏️ Minecraft</h2>
-        <img src="https://images.unsplash.com/photo-1607513746994-51f730a44832?w=600"
-             alt="Construção inspirada em Minecraft" width="250">
-        <p>Explore mundos, construa casas e descubra aventuras!</p>
-        <button onclick="favoritar('Minecraft')">⭐ Favoritar</button>
-    </div>
-
-    <div class="card" id="freefire">
-        <h2>🔥 Free Fire</h2>
-        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600"
-             alt="Computador de jogos" width="250">
-        <p>Conheça um universo cheio de desafios e diversão!</p>
-        <button onclick="favoritar('Free Fire')">⭐ Favoritar</button>
-    </div>
-
-    <div class="card" id="friv">
-        <h2>🕹️ Friv</h2>
-        <p>Conheça uma plataforma com vários jogos online!</p>
-        <button onclick="favoritar('Friv')">⭐ Favoritar</button>
-        <p>
-            <a href="https://www.friv.com/" target="_blank" rel="noopener noreferrer">
-                <button>Visitar Friv</button>
-            </a>
-        </p>
-    </div>
-
-    <div class="card" id="poki">
-        <h2>🎯 Poki</h2>
-        <p>Descubra muitos jogos diferentes para jogar!</p>
-        <button onclick="favoritar('Poki')">⭐ Favoritar</button>
-        <p>
-            <a href="https://poki.com/" target="_blank" rel="noopener noreferrer">
-                <button>Visitar Poki</button>
-            </a>
-        </p>
-    </div>
-
-    <div class="card" id="favoritos">
-        <h2>⭐ Meus Jogos Favoritos</h2>
-        <p>Você pode escolher vários favoritos!</p>
-        <ul id="listaFavoritos"></ul>
-        <button onclick="limparFavoritos()">Limpar favoritos</button>
-    </div>
-
-    <script>
-        let favoritos = [];
-
-        try {
-            favoritos = JSON.parse(
-                localStorage.getItem("meusFavoritos") || "[]"
-            );
-
-            if (!Array.isArray(favoritos)) {
-                favoritos = [];
-            }
-        } catch (erro) {
-            favoritos = [];
-        }
-
-        function pesquisarJogo() {
-            let nome = document
-                .getElementById("pesquisa")
-                .value.trim().toLowerCase();
-
-            const jogos = {
-                "roblox": "roblox",
-                "minecraft": "minecraft",
-                "free fire": "freefire",
-                "friv": "friv",
-                "poki": "poki"
-            };
-
-            if (jogos[nome]) {
-                location.href = "#" + jogos[nome];
-            } else {
-                alert("Jogo não encontrado! Tente outro nome.");
-            }
-        }
-
-        function favoritar(jogo) {
-            if (favoritos.includes(jogo)) {
-                favoritos = favoritos.filter(item => item !== jogo);
-            } else {
-                favoritos.push(jogo);
-            }
-
-            localStorage.setItem(
-                "meusFavoritos",
-                JSON.stringify(favoritos)
-            );
-
-            mostrarFavoritos();
-        }
-
-        function mostrarFavoritos() {
-            const lista = document.getElementById("listaFavoritos");
-            lista.innerHTML = "";
-
-            favoritos.forEach(function(jogo) {
-                const item = document.createElement("li");
-                item.textContent = "⭐ " + jogo;
-                lista.appendChild(item);
-            });
-
-            if (favoritos.length === 0) {
-                lista.textContent = "Você ainda não escolheu favoritos.";
-            }
-        }
-
-        function limparFavoritos() {
-            favoritos = [];
-
-            localStorage.setItem(
-                "meusFavoritos",
-                JSON.stringify(favoritos)
-            );
-
-            mostrarFavoritos();
-        }
-
-        mostrarFavoritos();
-    </script>
-<div style="text-align:center; margin:30px 0;">
-    <h2>🎮 Escolha seu jogo!</h2>
-
-    <a href="https://www.minecraft.net/pt-br"
-       target="_blank"
-       style="display:inline-block; background:#22c55e;
-       color:white; padding:15px 25px;
-       margin:10px; border-radius:12px;
-       text-decoration:none; font-weight:bold;">
-       🟩 Jogar Minecraft
-    </a>
-
-    <a href="https://ff.garena.com/pt/"
-       target="_blank"
-       style="display:inline-block; background:#f97316;
-       color:white; padding:15px 25px;
-       margin:10px; border-radius:12px;
-       text-decoration:none; font-weight:bold;">
-       🔥 Jogar Free Fire
-    </a>
-</div>
-    
+<header><div class="topbar"><a class="brand" href="#inicio">🎮 GAME ZONE</a><nav aria-label="Menu principal"><a href="#inicio">Início</a><a href="#jogos">Jogos</a><a href="#favoritos">⭐ Favoritos</a></nav></div></header>
+<main>
+<section class="hero" id="inicio"><span class="eyebrow">BLACK & GOLD EDITION</span><h1>GAME ZONE 2.0</h1><p>Seu universo gamer em um só lugar. Descubra jogos, salve seus favoritos e explore novas aventuras!</p><a class="btn" href="#jogos">🎮 Explorar jogos</a></section>
+<form class="search" id="formPesquisa"><input id="pesquisa" type="search" placeholder="Pesquisar Roblox, Minecraft..." aria-label="Pesquisar jogo"><button class="btn" type="submit">🔎 Pesquisar</button></form><div id="mensagemPesquisa" class="notice" role="status" aria-live="polite"></div>
+<section id="jogos"><div class="section-heading"><div><h2>🏆 Jogos em destaque</h2><p>Escolha seu próximo jogo favorito.</p></div></div><div class="grid">
+<article class="card" id="roblox" data-nome="Roblox"><img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600" alt="Controle de videogame" loading="lazy"><div class="card-body"><h3>🎮 Roblox</h3><p>Explore mundos incríveis e divirta-se!</p><div class="actions"><button class="btn secondary favorite" type="button" data-jogo="Roblox" aria-pressed="false">☆ Favoritar</button><a class="btn" href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Visitar Roblox ↗</a></div></div></article>
+<article class="card" id="minecraft" data-nome="Minecraft"><img src="https://images.unsplash.com/photo-1607513746994-51f730a44832?w=600" alt="Cenário de construção em blocos" loading="lazy"><div class="card-body"><h3>⛏️ Minecraft</h3><p>Construa, explore e descubra novas aventuras.</p><div class="actions"><button class="btn secondary favorite" type="button" data-jogo="Minecraft" aria-pressed="false">☆ Favoritar</button><a class="btn" href="https://www.minecraft.net/pt-br" target="_blank" rel="noopener noreferrer">Visitar Minecraft ↗</a></div></div></article>
+<article class="card" id="freefire" data-nome="Free Fire"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600" alt="Ambiente de jogos eletrônicos" loading="lazy"><div class="card-body"><h3>🔥 Free Fire</h3><p>Conheça um universo cheio de desafios e diversão!</p><div class="actions"><button class="btn secondary favorite" type="button" data-jogo="Free Fire" aria-pressed="false">☆ Favoritar</button><a class="btn" href="https://ff.garena.com/pt/" target="_blank" rel="noopener noreferrer">Visitar Free Fire ↗</a></div></div></article>
+<article class="card" id="friv" data-nome="Friv"><div class="placeholder" aria-hidden="true">🕹️</div><div class="card-body"><h3>🕹️ Friv</h3><p>Conheça uma plataforma com vários jogos online!</p><div class="actions"><button class="btn secondary favorite" type="button" data-jogo="Friv" aria-pressed="false">☆ Favoritar</button><a class="btn" href="https://www.friv.com/" target="_blank" rel="noopener noreferrer">Visitar Friv ↗</a></div></div></article>
+<article class="card" id="poki" data-nome="Poki"><div class="placeholder" aria-hidden="true">🎯</div><div class="card-body"><h3>🎯 Poki</h3><p>Descubra muitos jogos diferentes para jogar!</p><div class="actions"><button class="btn secondary favorite" type="button" data-jogo="Poki" aria-pressed="false">☆ Favoritar</button><a class="btn" href="https://poki.com/" target="_blank" rel="noopener noreferrer">Visitar Poki ↗</a></div></div></article>
+</div></section>
+<section class="favorites" id="favoritos"><h2>⭐ Meus jogos favoritos</h2><p>Seus jogos escolhidos ficam salvos neste navegador.</p><ul id="listaFavoritos" aria-live="polite"></ul><button class="btn secondary" id="limparFavoritos" type="button">Limpar favoritos</button></section>
+</main><footer><strong>🎮 GAME ZONE 2.0</strong> · Black & Gold Edition<br>Feito para quem ama jogos.</footer>
+<script>
+'use strict';
+const CHAVE='meusFavoritos';
+const jogosValidos=['Roblox','Minecraft','Free Fire','Friv','Poki'];
+let favoritos=[];
+try{const salvos=JSON.parse(localStorage.getItem(CHAVE)||'[]');if(Array.isArray(salvos))favoritos=[...new Set(salvos.filter(jogo=>jogosValidos.includes(jogo)))];}catch(e){favoritos=[];}
+function salvarFavoritos(){try{localStorage.setItem(CHAVE,JSON.stringify(favoritos));}catch(e){/* O site continua funcionando se o armazenamento estiver indisponível. */}}
+function mostrarFavoritos(){const lista=document.getElementById('listaFavoritos');lista.replaceChildren();if(!favoritos.length){const li=document.createElement('li');li.className='empty';li.textContent='Você ainda não escolheu favoritos.';lista.appendChild(li);}else{favoritos.forEach(jogo=>{const li=document.createElement('li');li.textContent='⭐ '+jogo;lista.appendChild(li);});}document.querySelectorAll('.favorite').forEach(botao=>{const ativo=favoritos.includes(botao.dataset.jogo);botao.classList.toggle('active',ativo);botao.setAttribute('aria-pressed',String(ativo));botao.textContent=ativo?'★ Favoritado':'☆ Favoritar';});}
+document.querySelectorAll('.favorite').forEach(botao=>botao.addEventListener('click',()=>{const jogo=botao.dataset.jogo;favoritos=favoritos.includes(jogo)?favoritos.filter(item=>item!==jogo):[...favoritos,jogo];salvarFavoritos();mostrarFavoritos();}));
+document.getElementById('limparFavoritos').addEventListener('click',()=>{favoritos=[];salvarFavoritos();mostrarFavoritos();});
+function normalizar(texto){return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();}
+document.getElementById('formPesquisa').addEventListener('submit',evento=>{evento.preventDefault();const busca=normalizar(document.getElementById('pesquisa').value);const mensagem=document.getElementById('mensagemPesquisa');if(!busca){mensagem.textContent='Digite o nome de um jogo para pesquisar.';return;}const card=[...document.querySelectorAll('.card[data-nome]')].find(item=>normalizar(item.dataset.nome).includes(busca));if(card){mensagem.textContent='Jogo encontrado: '+card.dataset.nome;card.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}else{mensagem.textContent='Jogo não encontrado. Tente Roblox, Minecraft, Free Fire, Friv ou Poki.';}});
+mostrarFavoritos();
+</script>
 </body>
 </html>
